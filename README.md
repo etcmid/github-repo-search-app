@@ -41,4 +41,3 @@ When you're done, stop the containers by pressing `Ctrl+C` in each terminal runn
 docker-compose down
 ```
 
-That's it! You've successfully set up and run the GitHub Repository Search App and its tests in a new location.
