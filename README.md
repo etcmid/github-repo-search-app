@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# GitHub Repository Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application allows you to search GitHub repositories using React, TypeScript, and Bootstrap. The app is containerized using Docker and docker-compose.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Make sure you have the following software installed on your system:
 
-### `npm start`
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Steps to Run the App
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clone the repository:**
+```shell
+git clone https://github.com/etcmid/github-repo-search-app.git
+cd github-repo-search-app
+```
 
-### `npm test`
+2. **Build and start the app container:**
+```shell
+docker-compose up --build app
+```
+This command will build the Docker image and start the container. The application will be accessible at `http://localhost:3000`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Run tests in the test container:**
 
-### `npm run build`
+Open a new terminal and navigate to the repository folder. Then, run:
+```shell
+docker-compose up --build test
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This command will build the test image and run the tests in a separate container. You will see the test results in the terminal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Stop and remove containers:**
 
-### `npm run eject`
+When you're done, stop the containers by pressing `Ctrl+C` in each terminal running `docker-compose up`. Then, run the following command to remove the containers and associated resources:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell
+docker-compose down
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+That's it! You've successfully set up and run the GitHub Repository Search App and its tests in a new location.
